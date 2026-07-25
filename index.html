@@ -1,39 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday ❤️</title>
 
-  <style>
-    body{
-      margin:0;
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:#111;
-      color:white;
-      font-family:Arial, sans-serif;
-      text-align:center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    h1{
-      font-size:60px;
-    }
+<title>Happy Birthday ❤️</title>
 
-    p{
-      font-size:22px;
-    }
-  </style>
+<meta name="theme-color" content="#000000">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-<div>
-  <h1>Happy Birthday ❤️</h1>
-  <p>This is just the beginning of your surprise...</p>
+<!-- ================= LOADER ================= -->
+
+<div id="loader">
+
+    <div class="loaderCircle"></div>
+
+    <p>
+        Loading Memories...
+    </p>
+
 </div>
+
+<!-- ================= PARTICLES ================= -->
+
+<div id="particles"></div>
+
+<div id="gradientGlow"></div>
+
+<!-- ================= INTRO ================= -->
+
+<section id="intro" class="page active">
+
+<div class="introWrapper">
+
+<span class="tinyText">
+
+For Someone Special
+
+</span>
+
+<h1 class="introLine">
+
+I made something...
+
+</h1>
+
+<h1 class="introLine hidden">
+
+Not because I had to...
+
+</h1>
+
+<h1 class="introLine hidden">
+
+But because...
+
+</h1>
+
+<h1 class="introLine hidden">
+
+You deserve something
+
+beautiful.
+
+</h1>
+
+<button id="beginBtn">
+
+Tap To Begin ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= HERO ================= -->
+
+<section id="hero" class="page">
+
+<div class="heroImage"></div>
+
+<div class="heroOverlay"></div>
+
+<div class="glassCard">
+
+<p class="miniTitle">
+
+03 July
+
+</p>
+
+<h1>
+
+Happy Birthday
+
+<span>
+
+Manuuu ❤️
+
+</span>
+
+</h1>
+
+<p class="heroDescription">
+
+This isn't just a website.
+
+It's every little memory,
+
+every smile,
+
+every laugh,
+
+and every moment
+
+I wanted you to relive today.
+
+</p>
+
+<button id="journeyBtn">
+
+Begin Our Story →
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= VIDEO PLAYER ================= -->
+
+<section id="videoSection" class="page">
+
+<div class="chapter">
+
+<p id="chapterCount">
+
+Chapter 01
+
+</p>
+
+<h2 id="chapterTitle">
+
+The Beginning
+
+</h2>
+
+</div>
+
+<div class="videoContainer">
+
+<video
+id="birthdayVideo"
+playsinline
+webkit-playsinline
+preload="metadata"
+></video>
+
+</div>
+
+<div class="videoProgress">
+
+<div id="progressFill"></div>
+
+</div>
+
+</section>
+
+<!-- ================= LETTER ================= -->
+
+<section id="letterSection" class="page">
+
+<div class="letterCard">
+
+<h2>
+
+A Letter For You ❤️
+
+</h2>
+
+<div id="typedLetter">
+
+</div>
+
+<button id="continueBtn">
+
+Continue →
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= END ================= -->
+
+<section id="ending" class="page">
+    
+    <div id="spaceScene">
+
+    <div id="projectorLight"></div>
+
+    <div id="galaxyBackground"></div>
+
+    <div id="starsLayer"></div>
+
+</div>
+
+    <!-- Fireworks Canvas -->
+    <canvas id="fireworksCanvas"></canvas>
+
+    <!-- Floating Hearts -->
+  <div id="floatingMemories"></div>
+
+    <!-- Final Content -->
+     <div class="lightRays"></div>
+    <div class="endingContent">
+
+<div class="moon"></div>
+
+        <p class="endingSmall">
+            Every memory...
+        </p>
+
+        <h1 id="endingTitle">
+            I Love You ❤️
+        </h1>
+
+        <p class="endingText">
+            Happy Birthday Manuuu
+        </p>
+
+        <button id="restartBtn">
+            Watch Again ↺
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= MUSIC ================= -->
+
+<audio
+id="bgMusic"
+preload="auto"
+loop
+>
+
+<source
+src="music/Until i found you.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<!-- ================= SCRIPT ================= -->
+
+
+<!-- =========================
+     Developer Panel
+========================== -->
+
+<div id="devPanel">
+
+    <h3>Developer Panel</h3>
+
+    <button id="goIntro">🏠 Intro</button>
+
+    <button id="goHero">❤️ Hero</button>
+
+    <button id="goVideos">🎬 Videos</button>
+
+    <button id="goLetter">💌 Letter</button>
+
+    <button id="goEnding">🌌 Ending</button>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
