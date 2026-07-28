@@ -119,6 +119,8 @@ beginBtn.addEventListener("click", () => {
 
     fadeMusic();
 
+    preloadVideos();   // 👈 Add this line
+
     changePage(hero);
 
 });
@@ -130,6 +132,12 @@ journeyBtn.addEventListener("click", () => {
     changePage(videoSection);
 
     playVideo();
+
+});
+
+continueBtn.addEventListener("click", () => {
+
+   changePage(letterSection);
 
 });
 
@@ -155,26 +163,76 @@ function fadeMusic() {
 
 }
 
+function preloadVideos() {
+
+    const videoFiles = [
+
+        "videos/video1.mp4",
+        "videos/video2.mp4",
+        "videos/video3.mp4",
+        "videos/video4.mp4",
+        "videos/video5.mp4",
+        "videos/video6.mp4",
+        "videos/video7.mp4",
+        "videos/video8.mp4",
+        "videos/video9.mp4",
+        "videos/video10.mp4",
+        "videos/video11.mp4",
+        "videos/video12.mp4",
+        "videos/video13.mp4",
+        "videos/video14.mp4",
+        "videos/video15.mp4"
+
+    ];
+
+    videoFiles.forEach(src => {
+
+        const video = document.createElement("video");
+
+        video.preload = "auto";
+
+        video.src = src;
+
+    });
+
+}
+å
 /* ==========================================
    VIDEO PLAYER
 ========================================== */
 
 const chapterNames = [
-    "Where It All Began ❤️",
-    "The First Smile",
-    "Our Crazy Moments 😂",
-    "The Adventures",
-    "The Beautiful Days",
-    "You Make Me Happy",
-    "Our Memories",
-    "The Cute Moments",
-    "The Best Days",
-    "Forever Together",
-    "More Memories",
-    "Still Smiling",
-    "My Favourite Person",
+
+    "You, Always",
+
+    "Forever Us",
+
+    "Endless Love",
+
+    "Soft & Romantic",
+
+    "Forever Mine",
+
+    "Just Us",
+
+    "Love Lives Here",
+
+    "You're My Home",
+
+    "Every Smile",
+
+    "My Safe Place",
+
+    "Still You",
+
+    "Better Together",
+
+    "Our Forever",
+
     "Almost There ❤️",
-    "Happy Birthday Manuuu ❤️"
+
+    "Happy Birthday, Manu ❤️"
+
 ];
 
 function playVideo() {
@@ -213,35 +271,35 @@ Your birthday letter will appear here.
 
 const chapterDescriptions = [
 
-    "Every story has a beginning ❤️",
+    "The beginning of everything beautiful.",
 
-    "The smile I never get tired of.",
+    "Every moment, side by side.",
 
-    "The little moments that mean everything.",
+    "A love that keeps growing.",
 
-    "Our adventures together.",
+    "The little moments we never forget.",
 
-    "You make ordinary days special.",
+    "Always choosing you.",
 
-    "The memories I'll always keep.",
+    "Two hearts, one journey.",
 
-    "Still smiling because of you.",
+    "Where love feels effortless.",
 
-    "My favourite person.",
+    "Wherever you are feels like home.",
 
-    "Another beautiful memory.",
+    "Every smile tells our story.",
 
-    "Our happiest days.",
+    "My favourite place has always been you.",
 
-    "More reasons to love you.",
+    "After all this time... still you.",
 
-    "You are my safe place.",
+    "Life is simply better with you.",
 
-    "The journey continues.",
+    "A day made for the most special person.",
 
-    "Almost at the end...",
+    "Thank you for every memory.",
 
-    "Happy Birthday ❤️"
+    "Happy Birthday, Manu ❤️"
 
 ];
 
@@ -291,7 +349,7 @@ video.addEventListener("ended", () => {
 
     } else {
 
-        changePage(ending);
+       changePage(letterSection);
 
         playGalaxyIntro();
 

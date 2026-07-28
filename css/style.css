@@ -194,6 +194,8 @@ visibility .9s;
 
 padding:40px;
 
+transform: translate(-350px, 35px);
+
 }
 
 .page.active{
@@ -576,27 +578,6 @@ rgba(255,255,255,.25);
    VIDEO SECTION
 ========================================================= */
 
-#videoSection{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:30px;
-
-    width:100%;
-
-    min-height:100vh;
-
-    padding:40px;
-
-    text-align:center;
-
-}
 
 .chapter{
 
@@ -609,6 +590,10 @@ rgba(255,255,255,.25);
     flex-direction:column;
 
     align-items:center;
+
+    padding-top: 90px;
+
+    margin-bottom:40px;
 
 }
 
@@ -1878,5 +1863,102 @@ opacity:.2;
 transform:scale(.8);
 
 }
+
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letterStage{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#050505;
+
+    padding:30px;
+}
+
+#loveLetter{
+
+    width:min(96vw, 1400px);
+
+    max-height:95vh;
+
+    object-fit:contain;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 25px 80px rgba(0,0,0,.65);
+
+    animation:letterFloat 5s ease-in-out infinite;
+}
+
+@keyframes letterFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+#continueBtn{
+
+margin-top:40px;
+
+padding:16px 40px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+background:white;
+
+transition:.35s;
+
+}
+
+#continueBtn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 12px 35px rgba(255,255,255,.25);
+
+}
+
+#videoSection{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
 
 }
